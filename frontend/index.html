@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/checks.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href='https://cdn.boxicons.com/3.0.4/fonts/basic/boxicons.min.css' rel='stylesheet'>
+  <style>
+    /* .loading {
+      -webkit-animation: sk-scaleout 1s infinite ease-in-out;
+      animation: sk-scaleout 1s infinite ease-in-out;
+      background-color: #0353ff;
+      border-radius: 50%;
+      height: 100px;
+      width: 100px;
+    } */
+
+    .loading i{
+      font-size: 50px;
+      color: #2323f3;
+      animation: roatating 1s infinite linear;
+    }
+
+    .semi-loader {
+      content: ' ';
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      border-radius: 50%;
+    }
+
+    .container {
+      height: 100vh;
+      min-width: 100vw;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @keyframes roatating {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(-360deg);
+      }
+    }
+  </style>
+  <title>Todo App</title>
+</head>
+
+<body>
+  <div id="spinner" class="container">
+    <div class="loading">
+      <i class="bx bx-refresh-ccw-alt"></i>
+    </div>
+  </div>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
