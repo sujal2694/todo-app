@@ -32,7 +32,7 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                <div className='flex items-center gap-2 cursor-pointer bg-blue-500 text-white hover:text-black transition-colors w-fit px-4 py-2 rounded-md hover:bg-white hover:border-2 hover:border-blue-400'>
+                <div className='flex items-center gap-2 cursor-pointer bg-blue-500 text-white hover:text-black transition-colors w-fit lg:px-4 px-2 lg:py-2 py-2 rounded-md hover:bg-white hover:border-2 hover:border-blue-400'>
                     <i className='bx  bx-arrow-out-right-square-half text-2xl'></i> 
                     <p onClick={logOut} className='text-md font-light cursor-pointer'>
                         Sign Out

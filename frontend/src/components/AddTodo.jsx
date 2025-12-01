@@ -150,7 +150,7 @@ const AddTodo = () => {
     const pendingTasks = totalTasks - completedTasks;
 
     return (
-        <div className='bg-white rounded-2xl w-[95vw] lg:w-[70vw] 2xl:w-[70vw] md:w-[80vw] m-auto mt-10 p-6 mb-10 shadow-2xl'>
+        <div className='bg-white rounded-2xl w-[90vw] lg:w-[70vw] 2xl:w-[70vw] md:w-[80vw] m-auto mt-10 p-6 mb-10 shadow-2xl'>
             <div className='flex items-center gap-2'>
                 <form onSubmit={addTodoHandler} className='w-full flex gap-2'>
                     <input

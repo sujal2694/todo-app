@@ -5,6 +5,7 @@ import ProgressGraph from './components/ProgressGraph'
 import AddTodo from './components/AddTodo'
 import { Toaster } from 'react-hot-toast'
 import { Context } from './context/context'
+import Footer from './components/Footer'
 
 const App = () => {
   const { token, loading, setLoading } = useContext(Context);
@@ -24,6 +25,7 @@ const App = () => {
           <Navbar />
           <AddTodo />
           <ProgressGraph />
+          <Footer/>
         </>}
     </>
   )

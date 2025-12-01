@@ -131,7 +131,7 @@ const DailyProgressGraph = () => {
     : 0
 
   return (
-    <div className='w-[95vw] lg:w-[70vw] md:w-[80vw] bg-white m-auto mt-10 p-6 rounded-2xl shadow-2xl mb-10'>
+    <div className='w-[90vw] lg:w-[70vw] md:w-[80vw] bg-white m-auto mt-10 p-6 rounded-2xl shadow-2xl mb-10'>
       <div className='flex items-start justify-between flex-wrap gap-4'>
         <div className='flex items-start flex-col gap-1'>
           <div className='flex items-center gap-2'>

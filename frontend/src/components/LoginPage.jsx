@@ -52,7 +52,7 @@ const LoginPage = () => {
 
           <div className='w-full h-12 mb-2.5 '>
             <p className='flex items-center gap-1.5 mb-1'><i className='bx bx-lock text-xl'></i> <span className='text-[14px]'>Password</span></p>
-            <input name='password' value={data.password} onChange={onChangeHandler} type="passw" placeholder='example@123' className='border border-gray-600/30 pl-5 text-md placeholder:text-sm w-full h-full rounded-md flex items-center cursor-pointer ' required />
+            <input name='password' value={data.password} onChange={onChangeHandler} type="password" placeholder='example@123' className='border border-gray-600/30 pl-5 text-md placeholder:text-sm w-full h-full rounded-md flex items-center cursor-pointer pr-2 ' required />
             {currState === "Sign Up" ? <><span className='text-[12px] text-gray-400 '>Minimum 6 characters</span></> : <></>}
 
           </div>
