@@ -5,11 +5,8 @@ import axios from 'axios'
 
 const LoginPage = () => {
 
-  const { url, currState, setCurrState, token, setToken } = useContext(Context);
-  const [data, setData] = useState({
-    email: "",
-    password: ""
-  })
+  const { url, currState, setCurrState, token, setToken, data, setData } = useContext(Context);
+
 
   const onChangeHandler = (event) => {
     const name = event.target.name;

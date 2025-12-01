@@ -62,3 +62,89 @@ export const registerUser = async (req, res) => {
     }
 }
 
+// Get user data by userId
+export const getUserData = async (req, res) => {
+    try {
+        const { userId } = req.body;
+
+        if (!userId) {
+            return res.status(400).json({
+                success: false,
+                message: "User ID is required"
+            });
+        }
+
+        // Find user by ID and exclude password
+        const user = await UserModel.findById(userId).select('-password');
+
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: "User not found"
+            });
+        }
+
+        res.status(200).json({
+            success: true,
+            user: {
+                _id: user._id,
+                email: user.email,
+                name: user.name || null,
+                createdAt: user.createdAt,
+                // Add any other fields you want to return
+            }
+        });
+
+    } catch (error) {
+        console.error("Error fetching user data:", error);
+        res.status(500).json({
+            success: false,
+            message: "Server error while fetching user data"
+        });
+    }
+};
+
+// Update user profile (optional)
+export const updateUserProfile = async (req, res) => {
+    try {
+        const { userId, name, email } = req.body;
+
+        if (!userId) {
+            return res.status(400).json({
+                success: false,
+                message: "User ID is required"
+            });
+        }
+
+        const updateData = {};
+        if (name) updateData.name = name;
+        if (email) updateData.email = email;
+
+        const updatedUser = await UserModel.findByIdAndUpdate(
+            userId,
+            updateData,
+            { new: true, runValidators: true }
+        ).select('-password');
+
+        if (!updatedUser) {
+            return res.status(404).json({
+                success: false,
+                message: "User not found"
+            });
+        }
+
+        res.status(200).json({
+            success: true,
+            message: "Profile updated successfully",
+            user: updatedUser
+        });
+
+    } catch (error) {
+        console.error("Error updating user profile:", error);
+        res.status(500).json({
+            success: false,
+            message: "Server error while updating profile"
+        });
+    }
+};
+
