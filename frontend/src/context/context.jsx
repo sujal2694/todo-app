@@ -5,7 +5,7 @@ import axios from 'axios'
 export const Context = createContext(null);
 
 const ContextProvider = (props) => {
-    const url = "https://todo-app-backend-gamma-liard.vercel.app/"
+    const url = "https://todo-app-backend-gamma-liard.vercel.app"
     const [currState, setCurrState] = useState("Sign Up");
     const [token, setToken] = useState("");
     const [loading, setLoading] = useState(true);
